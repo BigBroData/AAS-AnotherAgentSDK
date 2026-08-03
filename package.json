@@ -1,0 +1,24 @@
+{
+  "name": "visual-agent-architect",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:frontend": "bun run --filter frontend dev",
+    "dev:backend": "bun run --filter backend dev",
+    "dev": "bun run dev:backend & bun run dev:frontend",
+    "build": "bun run build:domain && bun run build:engine && bun run build:frontend",
+    "build:domain": "bun run --filter @vaa/domain build",
+    "build:engine": "bun run --filter @vaa/engine build",
+    "build:frontend": "bun run --filter frontend build",
+    "lint": "bun run --filter '*' lint"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.4.0"
+  }
+}
