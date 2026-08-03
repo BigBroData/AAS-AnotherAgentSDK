@@ -19,6 +19,7 @@ import {
   ConditionNode,
   ToolNode,
 } from './CustomNodes';
+import PropertiesPanel from './PropertiesPanel';
 import { useGraphStore } from '../store/graphStore';
 
 const nodeTypes = {
@@ -147,6 +148,9 @@ export default function FlowEditor() {
           <Background variant="dots" gap={12} size={1} />
         </ReactFlow>
       </div>
+
+      {/* Properties Panel */}
+      <PropertiesPanel nodeId={selectedNode} />
     </div>
   );
 }
